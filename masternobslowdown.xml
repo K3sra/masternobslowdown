@@ -1,0 +1,40 @@
+<Template>
+  <Name>MsterNobSlowDown</Name>
+  <Repository>kesra/masternobslowdown:latest</Repository>
+  <Network>bridge</Network>
+
+  <Volume>
+    <HostDir></HostDir>
+    <ContainerDir>/app/uploads</ContainerDir>
+    <Mode>rw</Mode>
+    <Description>Path to uploads directory on Unraid.</Description>
+  </Volume>
+
+  <Volume>
+    <HostDir></HostDir>
+    <ContainerDir>/app/output</ContainerDir>
+    <Mode>rw</Mode>
+    <Description>Path to output directory on Unraid.</Description>
+  </Volume>
+  
+  <Volume>
+    <HostDir></HostDir>
+    <ContainerDir>/app/watch</ContainerDir>
+    <Mode>rw</Mode>
+    <Description>Path to watch directory on Unraid.</Description>
+  </Volume>
+  
+  <Port>
+    <HostPort>5000</HostPort>
+    <ContainerPort>5000</ContainerPort>
+    <Protocol>tcp</Protocol>
+  </Port>
+
+  <Environment>
+    <Variable>
+        <Name>DEBUG_MODE</Name>
+        <Value>false</Value>
+        <Description>Set to true to enable debug mode. Default is false.</Description>
+    </Variable>
+  </Environment>
+</Template>
